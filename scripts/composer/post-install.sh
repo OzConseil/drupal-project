@@ -19,3 +19,9 @@ if [ ! -d web/sites/default/files ]
   then
     mkdir -m777 web/sites/default/files
 fi
+
+# Prepare the .gitignore file
+if [ ! -f .gitignore ]
+  then
+    cp .gitignore.example .gitignore
+fi
