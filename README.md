@@ -12,7 +12,7 @@ You might need to replace `composer` with `php composer.phar` (or similar) for y
 After that you can create the project:
 
 ```
-composer create-project drupal-composer/drupal-project:8.x-dev some-dir --stability dev --no-interaction
+composer create-project ozconseil/drupal-project:8.x-dev some-dir --stability dev --no-interaction
 ```
 
 With `composer require ...` you can download new dependencies to your installation.
@@ -22,31 +22,11 @@ cd some-dir
 composer require drupal/devel:8.*
 ```
 
-Copy the [.gitignore](https://github.com/louisbl/drupal8-starter/blob/master/.gitignore).
+Use drush to install Drupal
 
-Copy and adapt the [docker-compose.yml](https://github.com/louisbl/drupal8-starter/blob/master/docker-compose.yml) in your project.
-
-Copy the [nginx configuration](https://github.com/louisbl/drupal8-starter/blob/master/docker/nginx/default.conf) in `docker/nginx`.
-
-Make an `html` link to the web folder :
 ```
-ln -s web html
+"cd web && ../vendor/bin/drush site-install --verbose --yes --db-url=sqlite://tmp/site.sqlite"
 ```
-
-Start the servers:
-```
-docker-compose up
-```
-
-* Varnish is on [localhost:8017](http://localhost:8017)
-* Nginx is on [localhost:8016](http://localhost:8016)
-* Adminer is on [localhost:8015](http:"//localhost:8015)
-
-To run `drush` commands use:
-```
-docker-compose run --rm drush <CMD>
-```
-The `drush` container is linked with nginx and mysql already.
 
 ## What does the template do?
 
