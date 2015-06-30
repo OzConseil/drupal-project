@@ -23,15 +23,15 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "scripts": {
-        "post-install-cmd": "bash scripts/composer/post-install.sh"
+        "drush": "cd html && ../vendor/bin/drush"
     },
     "extra": {
         "installer-paths": {
-            "web/core": ["type:drupal-core"],
-            "web/modules/contrib/{$name}": ["type:drupal-module"],
-            "web/profiles/contrib/{$name}": ["type:drupal-profile"],
-            "web/themes/contrib/{$name}": ["type:drupal-theme"],
-            "web/drush/commands/{$name}": ["type:drupal-drush"]
+            "html/core": ["type:drupal-core"],
+            "html/modules/contrib/{$name}": ["type:drupal-module"],
+            "html/profiles/contrib/{$name}": ["type:drupal-profile"],
+            "html/themes/contrib/{$name}": ["type:drupal-theme"],
+            "html/drush/commands/{$name}": ["type:drupal-drush"]
         }
     }
 }

@@ -12,7 +12,15 @@ You might need to replace `composer` with `php composer.phar` (or similar) for y
 After that you can create the project:
 
 ```
-composer create-project ozconseil/drupal-project:8.x-dev some-dir --stability dev --no-interaction
+git clone git@github.com:OzConseil/drupal-project.git my-new-drupal
+```
+
+Use drush to install Drupal
+
+```
+cd my-new-drupal
+composer create-project --stability dev --no-interaction
+composer drush -- site-install --db-url=sqlite://tmp/drupal.sqlite
 ```
 
 With `composer require ...` you can download new dependencies to your installation.
@@ -20,12 +28,6 @@ With `composer require ...` you can download new dependencies to your installati
 ```
 cd some-dir
 composer require drupal/devel:8.*
-```
-
-Use drush to install Drupal
-
-```
-"cd web && ../vendor/bin/drush site-install --verbose --yes --db-url=sqlite://tmp/site.sqlite"
 ```
 
 ## What does the template do?
