@@ -1,6 +1,6 @@
 # Drupal 8 starter project with Docker and composer
 
-It uses the [Composer template](https://github.com/drupal-composer/drupal-project).
+It's based on the [Composer template](https://github.com/drupal-composer/drupal-project).
 
 ## Usage
 
@@ -15,12 +15,15 @@ After that you can create the project:
 git clone git@github.com:OzConseil/drupal-project.git my-new-drupal
 ```
 
-Use drush to install Drupal
+Use [drush si](http://drushcommands.com/drush-7x/site-install/site-install) to install Drupal
 
 ```
 cd my-new-drupal
 composer create-project --stability dev --no-interaction
-composer drush -- site-install --db-url=sqlite:tmp/drupal.sqlite
+// with local sqlite db
+composer drush -- site-install --db-url=site/default/files/.ht.db.sqlite
+// with MySQL db
+composer drush -- site-install --db-ur=mysql://root:pass@server:port/dbname
 ```
 
 With `composer require ...` you can download new dependencies to your installation.
@@ -34,14 +37,12 @@ composer require drupal/devel:8.*
 
 When installing the given `composer.json` some tasks are taken care of:
 
-* Drupal will be installed in the `web`-directory.
+* Drupal will be installed in the `html`-directory.
 * Autoloader is implemented to use the generated composer autoloader in `vendor/autoload.php`,
   instead of the one provided by Drupal (`web/vendor/autoload.php`).
-* Modules (packages of type `drupal-module`) will be placed in `web/modules/contrib/`
-* Theme (packages of type `drupal-module`) will be placed in `web/themes/contrib/`
-* Profiles (packages of type `drupal-profile`) will be placed in `web/profiles/contrib/`
-* Creates default writable versions of `settings.php` and `services.yml`.
-* Creates `sites/default/files`-directory.
+* Modules (packages of type `drupal-module`) will be placed in `html/modules/contrib/`
+* Theme (packages of type `drupal-module`) will be placed in `html/themes/contrib/`
+* Profiles (packages of type `drupal-profile`) will be placed in `html/profiles/contrib/`
 * Latest version of drush is installed locally for use at `vendor/bin/drush`.
 
 
