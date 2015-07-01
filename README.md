@@ -20,7 +20,7 @@ Use drush to install Drupal
 ```
 cd my-new-drupal
 composer create-project --stability dev --no-interaction
-composer drush -- site-install --db-url=sqlite://tmp/drupal.sqlite
+composer drush -- site-install --db-url=sqlite:tmp/drupal.sqlite
 ```
 
 With `composer require ...` you can download new dependencies to your installation.
