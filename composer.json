@@ -23,7 +23,7 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "scripts": {
-        "drush": "cd html && ../vendor/bin/drush"
+        "drush": "drush --root=html"
     },
     "extra": {
         "installer-paths": {
