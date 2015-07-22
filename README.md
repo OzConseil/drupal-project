@@ -29,7 +29,7 @@ If you launch drush without the composer script you must specify the root direct
 // with local sqlite db
 composer drush -- site-install --db-url=sqlite://site/default/files/.ht.db.sqlite
 // with MySQL db
-composer drush -- site-install --db-ur=mysql://user:pass@server:port/dbname
+composer drush -- site-install --db-url=mysql://user:pass@server:port/dbname
 ```
 
 With `composer require ...` you can download new dependencies to your installation.
