@@ -24,10 +24,11 @@ composer create-project --stability dev --no-interaction
 
 Use [drush si](http://drushcommands.com/drush-7x/site-install/site-install) to install Drupal.
 If you launch drush without the composer script you must specify the root directory: `./vendor/bin/drush --root=html site-install`.
+Or lauch drush from html directory: `../vendor/bin/drush site-install`.
 
 ```
 // with local sqlite db
-composer drush -- site-install --db-url=sqlite://site/default/files/.ht.db.sqlite
+composer drush -- site-install --db-url=sqlite://sites/default/files/.ht.db.sqlite
 // with MySQL db
 composer drush -- site-install --db-url=mysql://user:pass@server:port/dbname
 ```
