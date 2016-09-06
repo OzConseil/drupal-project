@@ -23,7 +23,7 @@ composer create-project --stability dev --no-interaction
 ```
 
 Use [drush si](http://drushcommands.com/drush-7x/site-install/site-install) to install Drupal.
-If you launch drush without the composer script you must specify the root directory: `./vendor/bin/drush --root=html site-install`.
+If you launch drush without the composer script you must specify the root directory: `./vendor/bin/drush --root=html site-install`
 Or lauch drush from html directory: `../vendor/bin/drush site-install`.
 
 ```
